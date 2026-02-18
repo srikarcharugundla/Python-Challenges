@@ -43,17 +43,26 @@ for r in request:
 removed_count=0
 PLI = length % 3
 
-if PLI==0:
-    for thing in low_demand:
-        removed_count = removed_count + 1
-    low_demand = []
-
+if PLI == 0:
+    signal = "GREEN"
 elif PLI == 1:
+    signal = "YELLOW"
+elif PLI==2:
+    signal = "RED"
+
+print("Traffic Signal Mode:", signal)
+
+if signal == "GREEN":   # PLI = 0
+    for thing in low_demand:
+        removed_count = removed_count + 1
+    low_demand = []
+
+elif signal == "YELLOW":   # PLI = 1
     for thing in high_demand:
         removed_count = removed_count + 1
     high_demand = []
 
-elif PLI == 2:
+elif signal == "RED":   # PLI = 2
     for thing in low_demand:
         removed_count = removed_count + 1
 
@@ -62,6 +71,7 @@ elif PLI == 2:
 
     low_demand = []
     high_demand = []
+
 
 print("\n final lists after filtering:")
 print("Length of Name (L):", length)
