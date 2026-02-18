@@ -47,6 +47,12 @@ Based on:
 
 PLI = Length % 3
 
+The PLI value is treated like a traffic signal control mechanism:
+
+PLI Value | Traffic Signal | Rule Applied
+0 | Green | Remove all Low Demand requests
+1 | Yellow | Remove all High Demand requests
+2 | Red | Keep only Moderate Demand requests
 
 The filtering rule applied is:
 
@@ -122,5 +128,6 @@ Moderate Demand: [25, 45]
 Low Demand: []
 High Demand: []
 Invalid Requests: [-3]
+
 
 
