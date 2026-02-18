@@ -1,5 +1,4 @@
 ##Project Description
-
 This Python program simulates an emergency command center system that analyzes disaster resource requests from different zones and generates a final dispatch plan based on classification rules and a personalized filtering logic (PLI).
 
 The system:
@@ -123,3 +122,4 @@ Moderate Demand: [25, 45]
 Low Demand: []
 High Demand: []
 Invalid Requests: [-3]
+
